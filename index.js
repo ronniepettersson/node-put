@@ -2,8 +2,8 @@ module.exports = Put;
 function Put () {
     if (!(this instanceof Put)) return new Put;
 
-    var words = [];
-    var len = 0;
+    const words = [];
+    let len = 0;
 
     this.put = function (buf) {
         words.push({ buffer : buf });
@@ -23,7 +23,7 @@ function Put () {
         return this;
     };
 
-    [ 8, 16, 24, 32, 64 ].forEach((function (bits) {
+    for (const bits of [ 8, 16, 24, 32, 64 ]) {
         this['word' + bits + 'be'] = function (x) {
             words.push({ endian : 'big', bytes : bits / 8, value : x });
             len += bits / 8;
@@ -35,7 +35,7 @@ function Put () {
             len += bits / 8;
             return this;
         };
-    }).bind(this));
+    }
 
     this.pad = function (bytes) {
         words.push({ endian : 'big', bytes : bytes, value : 0 });
@@ -48,19 +48,19 @@ function Put () {
     };
 
     this.buffer = function () {
-        var buf = Buffer.alloc(len);
-        var offset = 0;
-        words.forEach(function (word) {
+        const buf = Buffer.alloc(len);
+        let offset = 0;
+        for (const word of words) {
             if (word.buffer) {
                 word.buffer.copy(buf, offset, 0);
                 offset += word.buffer.length;
             }
             else if (word.bytes == 'float') {
                 // s * f * 2^e
-                var v = Math.abs(word.value);
-                var s = (word.value >= 0) * 1;
-                var e = Math.ceil(Math.log(v) / Math.LN2);
-                var f = v / (1 << e);
+                const v = Math.abs(word.value);
+                const s = (word.value >= 0) * 1;
+                const e = Math.ceil(Math.log(v) / Math.LN2);
+                const f = v / (1 << e);
                 console.dir([s,e,f]);
 
                 console.log(word.value);
@@ -74,11 +74,11 @@ function Put () {
                 offset += 4;
             }
             else {
-                var big = word.endian === 'big';
-                var ix = big ? [ (word.bytes - 1) * 8, -8 ] : [ 0, 8 ];
+                const big = word.endian === 'big';
+                const ix = big ? [ (word.bytes - 1) * 8, -8 ] : [ 0, 8 ];
 
                 for (
-                    var i = ix[0];
+                    let i = ix[0];
                     big ? i >= 0 : i < word.bytes * 8;
                     i += ix[1]
                 ) {
@@ -90,7 +90,7 @@ function Put () {
                     }
                 }
             }
-        });
+        }
         return buf;
     };
 
