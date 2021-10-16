@@ -1,3 +1,5 @@
+import { Buffer } from 'buffer';
+
 export default function Put () {
     if (!(this instanceof Put)) return new Put;
 
