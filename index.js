@@ -61,9 +61,6 @@ function Put () {
                 const s = (word.value >= 0) * 1;
                 const e = Math.ceil(Math.log(v) / Math.LN2);
                 const f = v / (1 << e);
-                console.dir([s,e,f]);
-
-                console.log(word.value);
 
                 // s:1, e:7, f:23
                 // [seeeeeee][efffffff][ffffffff][ffffffff]
