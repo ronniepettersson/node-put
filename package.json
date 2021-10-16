@@ -1,8 +1,14 @@
 {
-    "name" : "put",
-    "version" : "0.0.6",
+    "name" : "@frida/put",
     "description" : "Pack multibyte binary values into buffers",
+    "version" : "1.0.0",
+    "publishConfig": {
+        "access": "public"
+    },
     "main" : "./index.js",
+    "files": [
+        "/index.js"
+    ],
     "keywords": [
         "put",
         "pack",
@@ -10,8 +16,8 @@
     ],
     "repository": {
         "type": "git",
-        "url": "http://github.com/substack/node-put.git"
-    }, 
+        "url": "http://github.com/frida/node-put.git"
+    },
     "scripts" : {
         "test" : "expresso"
     },
