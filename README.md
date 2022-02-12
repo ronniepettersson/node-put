@@ -1,3 +1,3 @@
-# @frida/put
+# @ronniepettersson/node-put
 
-ESM fork of https://github.com/nornagon/node-put.
+Fork of https://github.com/frida/node-put.
