@@ -1,5 +1,5 @@
 {
-    "name" : "@frida/put",
+    "name" : "@ronniepettersson/put",
     "description" : "Pack multibyte binary values into buffers",
     "version" : "1.0.0",
     "publishConfig": {
@@ -17,7 +17,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "http://github.com/frida/node-put.git"
+        "url": "http://github.com/ronniepettersson/node-put.git"
     },
     "scripts" : {
         "test" : "expresso"
