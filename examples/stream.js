@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
-var Put = require('put');
+import Put from '../index.js';
 Put()
-    .word16be(24930)
-    .word32le(1717920867)
-    .word8(103)
+    .word16be(0x6162)
+    .word32le(0x66656463)
+    .word8(0x67)
+    .word8(0x0A)
     .write(process.stdout)
 ;

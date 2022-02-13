@@ -1,14 +1,11 @@
 {
-    "name" : "@ronniepettersson/put",
-    "description" : "Pack multibyte binary values into buffers",
-    "version" : "1.0.0",
+    "name": "@ronniepettersson/put",
+    "description": "Pack multibyte binary values into buffers",
+    "version": "1.1.0",
     "publishConfig": {
         "access": "public"
     },
-    "main" : "./index.js",
-    "files": [
-        "/index.js"
-    ],
+    "main": "./index.js",
     "type": "module",
     "keywords": [
         "put",
@@ -19,13 +16,14 @@
         "type": "git",
         "url": "http://github.com/ronniepettersson/node-put.git"
     },
-    "scripts" : {
-        "test" : "expresso"
+    "scripts": {
+        "test": "expresso"
     },
     "engines": {
-        "node" : ">=0.3.0"
+        "node": "^14.19.0 || ^16.13.2"
     },
-    "license": {
-        "type" : "MIT/X11"
+    "license": "MIT/X11",
+    "dependencies": {
+        "binary": "^0.3.0"
     }
 }

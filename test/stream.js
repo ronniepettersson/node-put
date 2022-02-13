@@ -1,7 +1,8 @@
-var assert = require('assert');
-var Put = require('put');
+import assert from "assert";
+import Put from '../index.js';
 
-exports.stream = function () {
+//exports.stream = function () {
+const stream = () => {    
     var written = 0;
     var stream = {
         write : function (buf) {
@@ -26,3 +27,5 @@ exports.stream = function () {
     ;
     assert.equal(written, 1);
 };
+
+stream();
