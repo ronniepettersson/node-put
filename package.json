@@ -17,7 +17,7 @@
         "url": "http://github.com/ronniepettersson/node-put.git"
     },
     "scripts": {
-        "test": "expresso"
+        "test": "mocha"
     },
     "engines": {
         "node": "^14.19.0 || ^16.13.2"
@@ -25,5 +25,8 @@
     "license": "MIT/X11",
     "dependencies": {
         "binary": "^0.3.0"
+    },
+    "devDependencies": {
+        "mocha": "^9.2.0"
     }
 }
